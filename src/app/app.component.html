@@ -1,0 +1,70 @@
+
+<nav class="navbar">
+  <div class="navbar-left">
+    <!-- Logo -->
+    <a href="#" class="navbar-logo">AmpleLogic</a>
+
+    <!-- Nav Items -->
+    <ul class="nav-items">
+      <li class="nav-item">
+        <i class="profile-icon"></i> Organization Structure
+      </li>
+      <li class="nav-item dropdown">
+        <i class="profile-icon"></i> Configuration
+        
+      </li>
+      <li class="nav-item dropdown">
+        <i class="profile-icon"></i> Reports
+
+      </li>
+      <li class="nav-item dropdown">
+        <i class="profile-icon"></i> ETL
+
+      </li>
+    </ul>
+  </div>
+
+  <div class="navbar-right">
+    <!-- Country Flag -->
+   <span><i class="bi bi-globe"></i></span>
+
+
+    
+
+    <!-- Profile Icon -->
+    <div class="profile">
+     <img src="../assets/Screenshot 2024-09-07 133052.png" style="width:28px">
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <!-- Start Button -->
+  <button class="start-btn" (click)="startMigration()">Start</button>
+
+  <!-- Offcanvas Popup -->
+  <div class="offcanvas" [class.show]="isOffcanvasVisible">
+    <div class="offcanvas-content">
+      <div class="offcanvas-header">
+        
+        <button class="toggle-btn" (click)="toggleOffcanvas()">
+          &#x25BC; <!-- Down Arrow for toggle button -->
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <p>Migrating Data to selected environment</p>
+        <div class="progress">
+          <div class="progress-bar" [style.width]="progress + '%'">{{ progress }}%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Notification -->
+  <div class="success-notification" *ngIf="showSuccessNotification">
+    <div class="notification-content">
+      <i class="icon">&#10003;</i> <!-- Checkmark Icon -->
+      <span>Migration applied successfully.</span>
+    </div>
+  </div>
+</div>
